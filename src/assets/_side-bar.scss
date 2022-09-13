@@ -1,0 +1,38 @@
+.side-bar {
+  background-color: $electroMagnetic;
+  width: 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  footer {
+    @extend header
+  }
+}
+
+.buttons-sidebar {
+  font-size: 1.4em;
+  background-color: transparent;
+  color: whitesmoke;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  input {
+    display: none;
+  }
+}
+
+.buttons-sidebar:hover {
+  background-color: $blueNights;
+  color: white;
+}
