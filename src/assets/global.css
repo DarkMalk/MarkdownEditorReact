@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "JetBrains Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -201,7 +201,7 @@ body {
   border-radius: 8px;
   border: 1px solid black;
   color: whitesmoke;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "JetBrains Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .preview-markdown pre {
   border: 1px solid black;
@@ -210,7 +210,7 @@ body {
   border-radius: 8px;
   color: whitesmoke;
   font-size: 1.2em;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "JetBrains Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .preview-markdown pre code {
   background-color: transparent;
@@ -234,4 +234,20 @@ body {
 }
 .preview-markdown a:hover {
   text-decoration: underline;
+}
+.preview-markdown p img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.form-config-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-config-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
 }/*# sourceMappingURL=global.css.map */

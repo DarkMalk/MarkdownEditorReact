@@ -2,19 +2,22 @@ import React, { useState } from 'react'
 import ModalConfig from './ModalConfig'
 import useMarkdown from '../customHooks/useMarkdown'
 import useFilename from '../customHooks/useFilename'
+import { setLocalStorage } from '../helper/helper'
 
 const SideBar = () => {
   const [modal, setModal] = useState(false)
-  const { name } = useFilename()
-  const { setValue, text } = useMarkdown()
+  const { name, setName } = useFilename()
+  const { text, setValue } = useMarkdown()
 
   const handleSave = () => {
-    localStorage.setItem('Markdown', JSON.stringify(text))
-    localStorage.setItem('filename', JSON.stringify(name))
+    setLocalStorage('Markdown', text)
+    setLocalStorage('filename', name)
   }
 
   const handleFileChange = e => {
     const [ file ] = e.target.files
+    const name = file.name.split('.')[0]
+    setName(name)
     
     const newReader = new FileReader()
     newReader.addEventListener('load', e => {
@@ -33,7 +36,7 @@ const SideBar = () => {
           <input type="file" accept='.md' onChange={handleFileChange} id='upload-file' />
         </label>
       </header>
-      <footer className='d-flex flex-column gap-2 align-items-center'>
+      <footer>
         <button onClick={handleSave} className='buttons-sidebar'>
           <i className='fa-sharp fa-solid fa-floppy-disk' />
         </button>
