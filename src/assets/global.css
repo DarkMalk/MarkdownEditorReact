@@ -83,6 +83,12 @@ body {
   color: white;
 }
 
+.toast-save-content {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
 .container-editor, .container-preview {
   width: 100%;
   min-width: 500px;
@@ -215,6 +221,7 @@ body {
 .preview-markdown pre code {
   background-color: transparent;
   border: none;
+  padding: 0;
 }
 .preview-markdown table {
   text-align: left;
@@ -237,7 +244,16 @@ body {
 }
 .preview-markdown p img {
   display: flex;
+  width: 100%;
   margin: 0 auto;
+}
+.preview-markdown a img {
+  width: inherit;
+}
+.preview-markdown ul, .preview-markdown ol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .form-config-editor {

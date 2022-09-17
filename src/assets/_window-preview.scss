@@ -74,6 +74,7 @@
   pre code {
     background-color: transparent;
     border: none;
+    padding: 0;
   }
 
   table {
@@ -102,6 +103,17 @@
   
   p img {
     display: flex;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  a img {
+    width: inherit;
+  }
+
+  ul, ol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 }
