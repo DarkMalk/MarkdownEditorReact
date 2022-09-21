@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
-import useFilename from '../customHooks/useFilename'
 import EditorMonaco from './EditorMonaco'
+import useFilename from '../customHooks/useFilename'
+import useChangeView from '../customHooks/useChangeView'
 
 const WindowEditor = () => {
   const [maxWidth, setMaxWidth] = useState(false)
   const { name, setName } = useFilename()
+  const { setChangeView } = useChangeView()
 
   return (
     <div className={`container-editor ${maxWidth ? 'maximize-window' : ''}`}>
       <div className='buttons-window'>
+        <div className='button-mobile'>
+          <button onClick={setChangeView}>Toggle preview</button>
+        </div>
         <div className='input-name'>
           <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder='Nombra tu archivo...' />
           <div>.md</div>

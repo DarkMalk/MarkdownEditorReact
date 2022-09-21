@@ -1,35 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "JetBrains Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-body {
-  background-color: #222f3e;
-  overflow: hidden;
-}
-
-.container-application {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-}
-
-.container-windows {
-  width: calc(100% - 48px);
-  height: 100%;
-  padding: 4px;
-}
-
-.maximize-window {
-  position: absolute;
-  width: calc(100% - 56px) !important;
-  height: calc(100% - 8px);
-}
-
 .split {
   display: flex;
   flex-direction: row;
@@ -87,6 +56,34 @@ body {
   position: absolute;
   right: 8px;
   bottom: 8px;
+  z-index: 1060;
+}
+
+.tooltip, #button-config:hover::after, #button-save:hover::after, #button-upload:hover::after, #button-download:hover::after {
+  background-color: #222f3e;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 0.8em;
+  z-index: 1000;
+  position: absolute;
+  left: 48px;
+}
+
+#button-download:hover::after {
+  content: "Descargar archivo";
+}
+
+#button-upload:hover::after {
+  content: "Importar archivo";
+}
+
+#button-save:hover::after {
+  content: "Guardar contenido en local Storage";
+}
+
+#button-config:hover::after {
+  content: "Configuraciones del editor";
 }
 
 .container-editor, .container-preview {
@@ -107,6 +104,15 @@ body {
   flex-direction: row;
   justify-content: space-between;
   gap: 4px;
+}
+.container-editor .buttons-window .button-mobile, .container-preview .buttons-window .button-mobile {
+  display: none;
+}
+.container-editor .buttons-window .button-mobile button, .container-preview .buttons-window .button-mobile button {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0 12px;
+  background-color: #222f3e;
 }
 .container-editor .buttons-window button, .container-preview .buttons-window button {
   border: none;
@@ -152,6 +158,22 @@ body {
   height: 100%;
 }
 
+@media (max-width: 1200px) {
+  .container-editor, .container-preview {
+    position: absolute;
+    width: calc(100% - 48px) !important;
+    height: 100%;
+    z-index: 1;
+    border: none;
+    border-radius: 0px;
+  }
+  .container-editor .button-maximize, .container-preview .button-maximize {
+    display: none;
+  }
+  .container-editor .buttons-window .button-mobile, .container-preview .buttons-window .button-mobile {
+    display: inherit;
+  }
+}
 .container-preview .buttons-window {
   height: 36px;
   padding: 4px;
@@ -159,6 +181,15 @@ body {
   flex-direction: row;
   justify-content: right;
   gap: 4px;
+}
+.container-preview .buttons-window .button-mobile {
+  display: none;
+}
+.container-preview .buttons-window .button-mobile button {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0 12px;
+  background-color: #222f3e;
 }
 .container-preview .buttons-window button {
   border: none;
@@ -256,6 +287,22 @@ body {
   gap: 4px;
 }
 
+@media (max-width: 1200px) {
+  .container-preview {
+    position: absolute;
+    width: calc(100% - 48px) !important;
+    height: 100%;
+    z-index: 0;
+    border-radius: 0px;
+    border: none;
+  }
+  .container-preview .buttons-window {
+    justify-content: left;
+  }
+  .container-preview .buttons-window .button-mobile {
+    display: inherit;
+  }
+}
 .form-config-editor {
   display: flex;
   flex-direction: column;
@@ -266,4 +313,45 @@ body {
   flex-direction: column;
   gap: 6px;
   width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #222f3e;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
+.container-application {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.container-windows {
+  width: calc(100% - 48px);
+  height: 100%;
+  padding: 4px;
+}
+
+.maximize-window {
+  position: absolute;
+  width: calc(100% - 56px) !important;
+  height: calc(100% - 8px);
+}
+
+@media (max-width: 1200px) {
+  .container-windows {
+    padding: 0px;
+  }
 }/*# sourceMappingURL=global.css.map */

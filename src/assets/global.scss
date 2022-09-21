@@ -5,6 +5,12 @@ $electroMagnetic: #2f3640;
 $fuelTown: #576574;
 $imperialPrimer: #222f3e;
 
+@import "split";
+@import "side-bar";
+@import "window-editor";
+@import "window-preview";
+@import "form-config-editor";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,11 +23,15 @@ body {
   overflow: hidden;
 }
 
+#root {
+  height: 100vh;
+}
+
 .container-application {
   display: flex;
   flex-direction: row;
   width: 100%;  
-  height: 100vh;
+  height: 100%;
 }
 
 .container-windows {
@@ -36,8 +46,8 @@ body {
   height: calc(100% - 8px);
 }
 
-@import "split";
-@import "side-bar";
-@import "window-editor";
-@import "window-preview";
-@import "form-config-editor"
+@media (max-width: 1200px) {
+  .container-windows {
+    padding: 0px;
+  }
+}

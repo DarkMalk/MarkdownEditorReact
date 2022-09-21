@@ -41,4 +41,36 @@
   position: absolute;
   right: 8px;
   bottom: 8px;
+  z-index: 1060;
+}
+
+.tooltip {
+  background-color: $imperialPrimer;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 0.8em;
+  z-index: 1000;
+  position: absolute;
+  left: 48px;
+}
+
+#button-download:hover::after {
+  @extend .tooltip;
+  content: 'Descargar archivo';
+}
+
+#button-upload:hover::after {
+  @extend .tooltip;
+  content: 'Importar archivo';
+}
+
+#button-save:hover::after {
+  @extend .tooltip;
+  content: 'Guardar contenido en local Storage';
+}
+
+#button-config:hover::after {
+  @extend .tooltip;
+  content: 'Configuraciones del editor';
 }

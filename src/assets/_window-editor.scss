@@ -16,6 +16,15 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 4px;
+  .button-mobile {
+    display: none;
+    button {
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 0 12px;
+      background-color: $imperialPrimer;
+    }
+  }
   button {
     border: none;
     background-color: transparent;
@@ -58,10 +67,27 @@
   }
 }
 
-
-
 .editor {
   border: 1px solid black;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .container-editor {
+    position: absolute;
+    width: calc(100% - 48px) !important;
+    height: 100%;
+    z-index: 1;
+    border: none;
+    border-radius: 0px;
+    .button-maximize {
+      display: none;
+    }
+    .buttons-window {
+      .button-mobile {
+        display: inherit;
+      }
+    }
+  }
 }

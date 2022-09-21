@@ -9,6 +9,15 @@
   flex-direction: row;
   justify-content: right;
   gap: 4px;
+  .button-mobile {
+    display: none;
+    button {
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 0 12px;
+      background-color: $imperialPrimer;
+    }
+  }
   button {
     border: none;
     background-color: transparent;
@@ -115,5 +124,22 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container-preview {
+    position: absolute;
+    width: calc(100% - 48px) !important;
+    height: 100%;
+    z-index: 0;
+    border-radius: 0px;
+    border: none;
+    .buttons-window {
+      justify-content: left;
+      .button-mobile {
+        display: inherit;
+      }
+    }
   }
 }
