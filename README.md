@@ -1,5 +1,9 @@
 # **_Markdown Editor_**
 
+## Preview
+
+![markdown-editor-preview](./preview/MarkdownEditorReact.webp)
+
 ## **Tecnologias utilizadas en el proyecto**
 
 - [React](https://reactjs.org/)
